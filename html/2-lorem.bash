@@ -2,6 +2,7 @@
 
 source ./../setup.bash
 
+
 strCategory="html"
 strName="2-lorem"
 strFile="2-lorem.html"
