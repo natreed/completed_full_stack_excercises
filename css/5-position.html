@@ -9,31 +9,38 @@
 			#outer {
 				width:300px;
 				height:150px;
-				
 				margin:50px;
-
+				position:relative;
 				background-color:#CCCCCC;
 			}
 
 			#first {
+				position:absolute;
 				background-color:#FFFFFF;
+				left:10px;
+				top:10px;
 			}
 
 			#second {
+				position:absolute;
 				background-color:#FFFFFF;
+				left: 150px;
+				top: 20px;
 			}
 			
 			#fixed {
-
+				bottom: 0px;
+				left: 0px;
+				position:fixed;
 			}
 		</style>
 	</head>
 	<body>
 		<div id="outer">
 			<div id="first">
-				left: 10 px
-				<br>
-				top: 10 px
+					left: 10 px
+					<br>
+					top: 10 px
 			</div>
 			<div id="second">
 				left: 150 px
