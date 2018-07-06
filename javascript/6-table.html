@@ -6,16 +6,44 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
 	</head>
 	<body>
-		<div id="output">output</div>
+		<div id="output"></div>
 
-		<script type="text/javascript">
+		<script type="text/javascript" >
+			'use strict';
 			var functionCreate = function(strInput) {
 				// create a html table that represents the csv given in strInput set the content of the output div to this html table
 				// you can either create a string that represents the html and use innerHTML to set it or you can use createElement / appendChild
 				// should this function be called multiple times, the output div should only contain the table of the most recent call
 
+				//parse csv data into rows and cells with 2d array
 				document.getElementById('output').innerHTML = '';
-			};
+
+				var row_data = strInput.trim().split('\n');
+				var t_rows = [];
+				var i;
+				for (i = 0; i < row_data.length; i++) {
+				    var t_row = row_data[i].split(',');
+				    t_rows.push(t_row);
+				}
+
+				var newTable = document.createElement("table");
+
+
+				for (i=0; i < t_rows.length; i++) {
+				    var newRow = newTable.insertRow(i);
+				    var j;
+				    for (j = 0; j < t_rows[i].length; j++) {
+				        var newCell = newRow.insertCell(j);
+                        newCell.innerHTML = t_rows[i][j];
+                    }
+				}
+
+				newTable.setAttribute("border", "1");
+
+				var div = document.getElementById('output');
+				div.appendChild(newTable);
+
+			}
 
 			functionCreate('a,b,c\n1,2,3\n'); // the new line at the end should not make a difference
 			
@@ -58,6 +86,7 @@
 			//     </tr>
 			//     <tr>
 			//       <td>1</td>
+
 			//       <td>2</td>
 			//       <td>3</td>
 			//     </tr>
