@@ -15,8 +15,21 @@
 				// create a table similar to the previous exercie, but with 'click me' as the text for each cell / td element
 				// when a cell / td element is being clicked, its text should be changed to 'y.x' (see example below)
 				// you have to attach a click listener to each cell / td element and i recommend to make use of the jquery data function
+                var table = jQuery(document.createElement('table')).attr({border: '1'});
 
-				return jQuery('<table></table>');
+                for (var i = 0; i < intHeight; i++) {
+                    var row = jQuery('<tr></tr>').appendTo(table);
+                    for (var j = 0; j < intWidth; j++) {
+                        var cell = jQuery('<td></td>').text('click me').appendTo(row);
+                        jQuery(cell).on('click', 'td',  function() {
+                            var s = (i + 1) + '.' + (j + 1);
+                            jQuery(cell).html(s).show();
+						});
+                    }
+                }
+
+                table.appendTo('#output');
+				return jQuery(table);
 			};
 
 			jQuery('#output')

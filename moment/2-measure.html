@@ -21,8 +21,12 @@
 
 			var functionMeasure = function(dblRandom) {
 				// call functionAlgorithm(dblRandom) in here, measure how long it takes to execute this function and return the measured time in milliseconds
+				var start = moment();
+				functionAlgorithm(dblRandom);
+				var finish = moment();
 
-				return 0;
+
+				return (finish - start);
 			};
 
 			console.log(functionMeasure(Math.random())); // expected: a number that represents the time in milliseconds it took to execute the function

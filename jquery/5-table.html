@@ -14,15 +14,23 @@
 			var functionCreate = function(intWidth, intHeight) {
 				// create a table with the width and height and in doing so, set the text to each cell / td element to 'y.x' (see example below)
 				// remember that you were already asked to create a table in the javascript section, but here you are asked to return a jquery object that represents a table
-				// to do this, you will have create jquery elements that represent the tr / td elements and append them systematically to a jquery table element
+				// to do this, you will have create jquery elemets that represent the tr / td elements and append them systematically to a jquery table element
+				var table = jQuery(document.createElement('table')).attr({border: '1'});
 
-				return jQuery('<table></table>');
+				for (var i = 0; i < intHeight; i++) {
+				    var row = jQuery('<tr></tr>').appendTo(table);
+					for (var j = 0; j < intWidth; j++) {
+						jQuery('<td></td>').text((i + 1) + '.' + (j + 1)).appendTo(row);
+					}
+				}
+
+				table.appendTo('#output');
+				return jQuery(table);
 			};
 
-			jQuery('#output')
-				.append(functionCreate(3, 2))
-			;
-			
+
+
+
 			// expected table for functionCreate(2, 1):
 			//   <table border="1">
 			//     <tr>
