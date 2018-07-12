@@ -16,7 +16,7 @@
 		<script type="text/javascript">
 			var functionGet = function(strSelector) {
 				// determine whether the content of jQuery(strSelector) should be retrieved by using .val() or .text() and return this content
-				if (jQuery(strSelector).attr('type') === 'text') {
+				if (jQuery(strSelector).val() === "") {
 				    return jQuery(strSelector).text();
 				}
 
@@ -26,15 +26,13 @@
 			var functionSet = function(strSelector, strContent) {
 				// determine whether the content of jQuery(strSelector) should be set by using .val() or .text() and set it to strContent
 
-				if (jQuery(strSelector).attr('value') !== 'undefined') {
+				if (jQuery(strSelector).val() !== "") {
                     jQuery(strSelector).val(strContent);
 				}
 				else {
-                    (jQuery(strSelector).val('type' + 'text'));
-                }
-                if (jQuery(strSelector).attr('type') === 'text') {
                     jQuery(strSelector).text(strContent);
                 }
+
 			};
 
 			console.log(functionGet('#first')); // expected: 'first'

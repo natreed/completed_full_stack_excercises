@@ -18,16 +18,21 @@
                 var table = jQuery(document.createElement('table')).attr({border: '1'});
 
                 for (var i = 0; i < intHeight; i++) {
-                    var row = jQuery('<tr></tr>').appendTo(table);
+                    var row = jQuery('<tr></tr>');
                     for (var j = 0; j < intWidth; j++) {
-                        var cell = jQuery('<td></td>').text('click me').appendTo(row);
-                        jQuery(cell).on('click', 'td',  function() {
-                            var s = (i + 1) + '.' + (j + 1);
-                            jQuery(cell).html(s).show();
-						});
-                    }
-                }
+                        var cell = jQuery('<td></td>').text('click me');
+                        cell.data({x: i+1, y: j+1});
 
+                        console.log(cell);
+                        jQuery(cell).on('click',  function() {
+                            console.log("click works");
+                            var s = jQuery(this).data('x') + '.' + jQuery(this).data('y');
+                            jQuery(this).text(s);
+						});
+                        row.append(cell);
+                    }
+                    table.append(row);
+                }
                 table.appendTo('#output');
 				return jQuery(table);
 			};
