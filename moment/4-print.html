@@ -12,10 +12,10 @@
 				// given intEpoch (an epoch time), return a string that represents the given date in the format expected by the given examples
 				var formatTime = '';
 				if (moment < intEpoch) {
-				    formatTime = moment(intEpoch).format('dddd the do MMMM YYYY') + moment(intEpoch).toNow();
+				    formatTime = moment(intEpoch).format('dddd [the] Do MMMM YYYY') + moment(intEpoch).toNow();
 				}
 				else {
-                    formatTime = moment(intEpoch).format('dddd the do MMMM YYYY - ') + moment(intEpoch).fromNow();
+                    formatTime = moment(intEpoch).format('dddd [the] Do [of] MMMM [in] YYYY - ') + moment(intEpoch).fromNow();
 				}
 
 				return formatTime;
