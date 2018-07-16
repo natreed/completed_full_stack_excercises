@@ -24,9 +24,46 @@
 					})
 				;
 			});
+
 		</script>
 	</head>
+
+	<style>
+		#outer_row {
+			height: 125px;
+		}
+		#inner_row {
+			height: 100px;
+		}
+
+	</style>
+
 	<body>
+		<div id="outer_row" class="row">
+			<div class="col-md-2">
+				col-md-2 this is the first column
+			</div>
+
+			<div class="col-md-6">
+				col-md-6
+				<div id="inner_row" class="row">
+					<div class="col-md-4">
+						col-md-4
+					</div>
+					<div class="col-md-4">
+						col-md-4 with more than one line
+					</div>
+					<div class="col-md-4">
+						col-md-4
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				col-md-4 the third column
+			</div>
+
+		</div>
+
 		
 	</body>
 </html>
