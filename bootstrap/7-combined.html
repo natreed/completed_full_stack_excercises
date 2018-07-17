@@ -12,17 +12,109 @@
 
 		<style type="text/css">
 			.navbar {
-				margin-bottom:30px;
+				margin-bottom: 30px;
+			}
+			#lineBreak {
+				heigh: 1px;
+			}
+			.jumbotron {
+
 			}
 		</style>
 	</head>
 	<body>
-		<!-- this exercise looks like more work than it actually is, since you can copy and paste a majority of it. you might ask yourself in this regard why there is a gap between the navbar and the jumbotron. this is because the navbar is set to static and not to fixed. -->
+		<
+		<nav class="navbar navbar-static-top navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">hello world</a>
+			<div class="navbar-collapse">
+				<ul id="navbar-nav" class="navbar-nav mr-auto">
+					<li id="home" class="nav-item active">
+						<a class="nav-link" href="#">home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">about</a>
+					</li>
+					<li class="nav-item" >
+						<a class="nav-link " href="#">contact</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav navbar-expand-md d-flex justify-content-end ">
+					<li class="nav-item" >
+						<a class="nav-link" href="#">register</a>
+					</li>
+					<li class="nav-item" >
+						<a class="nav-link" href="#">login</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div >
+			<div class="jumbotron mt-0">
+				<div class="container">
+					<h1 >brace yourself</h1>
+					<p>
+						this exercise looks like more work than it actually is, since you can copy and paste a majority of it. you might ask yourself in this regard why there is a gap between the navbar and the jumbotron. this is because the navbar is set to static and not to fixed.
+					</p>
+				</div>
 
-		<p>vivamus felis odio, tristique posuere mollis ut, gravida et lorem. etiam a augue fermentum, auctor erat nec, porttitor magna. proin sit amet egestas purus. proin iaculis sed quam sit amet laoreet.</p>
+			</div>
 
-		<p>curabitur malesuada gravida lacus eget iaculis. duis diam magna, gravida ac posuere sit amet, sollicitudin non justo. praesent pretium tristique risus. donec feugiat, tortor ac semper laoreet, enim arcu tempor nisi, eu aliquam ex nisl elementum ex.</p>
+		</div>
+		<div class="container-fluid " >
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<h2>heading</h2>
+						<p>vivamus felis odio, tristique
+							posuere mollis ut, gravida et lorem.
+							etiam a augue fermentum, auctor
+							erat nec, porttitor magna. proin sit
+							amet egestas purus. proin iaculis
+							sed quam sit amet laoreet.
+						</p>
+						<p>
+							<a class="btn btn-secondary" href="#" role="button">more details »</a>
+						</p>
+					</div>
+					<div class="col-md-4">
+						<h2>heading</h2>
+						<p>curabitur malesuada gravida lacus
+							eget iaculis. duis diam magna,
+							gravida ac posuere sit amet,
+							sollicitudin non justo. praesent
+							pretium tristique risus. donec
+							feugiat, tortor ac semper laoreet,
+							enim arcu tempor nisi, eu aliquam
+							ex nisl elementum ex.
+						</p>
+						<p>
+							<a class="btn btn-secondary" href="#" role="button">more details »</a>
+						</p>
+					</div>
+					<div class="col-md-4">
+						<h2>heading</h2>
+						<p>integer posuere sed justo vel
+							dignissim. pellentesque elementum
+							aliquam aliquet. nullam quis
+							consectetur libero, et cursus nunc.
+							donec iaculis enim a velit iaculis
+							dictum. aliquam erat volutpat.
 
-		<p>integer posuere sed justo vel dignissim. pellentesque elementum aliquam aliquet. nullam quis consectetur libero, et cursus nunc. donec iaculis enim a velit iaculis dictum. aliquam erat volutpat.</p>
+						</p>
+						<p>
+							<a class="btn btn-secondary" href="#" role="button">more details »</a>
+						</p>
+					</div>
+				</div>
+
+			</div>
+			<div class="container">
+				<hr id="lineBreak">
+				<p>some message in the footer</p>
+			</div>
+
+		</div>
+
+
 	</body>
 </html>
