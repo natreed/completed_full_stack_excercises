@@ -1,11 +1,19 @@
 'use strict';
 
 var http = require('http'); // do not change this line
-var querystring = require('querystring'); // do not change this line
-
+var queryString = require('querystring'); // do not change this line
+var globMessages = [];
 
 var server = http.createServer(function (req, res) {
-    var globMessages = {};
+    if (req.url.startsWith("/submit")){
+        res.writeHead(200, {
+            'Location': '/new'
+        });
+
+
+
+        req.end();
+    }
     if (req.url === "/form") {
         //http://localhost:8080/form should return the form as shown below
         res.writeHead(200, {
@@ -29,60 +37,44 @@ var server = http.createServer(function (req, res) {
 
     else if (req.url === "/new") {
         var strBuffer = '';
-        req.setEncoding('utf-8');
 
-        req.on('end', function () {
-            var objectParsed = qs.parse(strBuffer);
+        res.writeHead(200, {
+            'Content-Type': 'text/plain'
+        });
 
+
+
+        req.on('data', function (dataString) {
+            strBuffer += dataString;
+        });
+
+        req.on ('end', function () {
+            let objectParsed = queryString.parse(strBuffer);
             globMessages.push({
                 'strName': objectParsed.name || '',
                 'strMessage': objectParsed.message || ''
-            })
-
-            res.writeHead(302, {
-                'Location': '/'
             });
-
-
-            res.end('thank you for your message');
-        })
-    }
-
-    else if (req.url === "/new") {
-        var strBuffer = '';
-        req.setEncoding('utf-8');
-
-        req.on('end', function () {
-            var objectParsed = qs.parse(strBuffer);
-
-            globMessages.push({
-                'strName': objectParsed.name || '',
-                'strMessage': objectParsed.message || ''
-            })
-
-            res.writeHead(302, {
-                'Location': '/'
-            });
-
-            res.write('<!DOCTYPE html>');
-            res.write('<html>');
-            res.write('<body>');
-            res.write('<form action="/new" method="post">');
-            res.write('<input type="text" name="name">');
-            res.write('<input type="text" name="message">');
-            res.write('<input type="submit" value="submit">');
-            res.write('</form>');
-            res.write('</body>');
-            res.write('</html>');
-
-            res.end(
-            );
-
-            res.end('thank you for your message');
         })
 
 
+        res.end('thank you for your message')
     }
+    else if (req.url === "/list") {
+        res.writeHead(200, {
+            'Content-Type': 'text/plain'
+        });
+
+        var msgStr = "";
+        for (var msg of globMessages) {
+            msgStr += msg.strName + ": " + msg.strMessage + "\n";
+
+        }
+        msgStr = msgStr.substring(0, msgStr.length - 1)
+        res.end(msgStr);
+    }
+
+
+
 });
 
 server.listen(process.env.PORT || 8080);

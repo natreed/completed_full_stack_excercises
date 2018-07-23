@@ -45,8 +45,15 @@ var server = http.createServer(function (req, res) {
 
         var cookies = req.headers.cookie;
         var s = '';
-        if (cookies.indexOf('hello=world') >= 0) {
-            s = 'yes';
+
+
+        if (cookies !== undefined) {
+            if (cookies.indexOf('hello=world') >= 0) {
+                s = 'yes';
+            }
+            else {
+                s = 'no';
+            }
         }
         else {
             s = 'no';
