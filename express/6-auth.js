@@ -3,6 +3,28 @@
 var express = require('express'); // do not change this line
 var passport = require('passport'); // do not change this line
 var strategy = require('passport-http'); // do not change this line
+var session = require('express-session');
+express.use(session({secret: 'mySecretKey'}));
+express.use(passport.initialize());
+express.use(passport.session());
+
+var server = express();
+
+server.post('/test',
+    passport.authenticate('local', { failureRedirect: '/login' }),
+    function(req, res) {
+        res.redirect('/');
+    });
+
+passport.use(new LocalStrategy({
+        usernameField: 'test',
+        passwordField: 'logmein',
+        session: false
+    },
+    function(username, password, done) {
+        // ...
+    }
+));
 
 // preface: use the passport middleware and only grant the user "test" with the password "logmein" access
 
