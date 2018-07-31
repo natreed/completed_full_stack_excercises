@@ -10,6 +10,40 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
 	</head>
 	<body>
+
+	<!--
+			given a javascript object like:
+				{
+					'objectStocks': [
+						{ 'strName': 'AMD.NAS', 'dblValue': 6.735, 'dblChange': -0.17, 'intTime': 1469635304434, 'intVolume': 19873260 },
+						{ 'strName': 'FME.FRA', 'dblValue': 81.41, 'dblChange': 0.25, 'intTime': 1469635495373, 'intVolume': 506131 },
+						{ 'strName': 'MSFT.NAS', 'dblValue': 56.34, 'dblChange': -0.43, 'intTime': 1469635411375, 'intVolume': 10467243 }
+					]
+				} -->
+	<table border="1">
+		<tr>
+			<th>name</th>
+			<th>value</th>
+			<th>change</th>
+			<th>time</th>
+			<th>volume</th>
+		</tr>
+		{{#objectStocks}}
+			<tr>
+				<td id="name">{{strName}}</td>
+				<td id="value">
+					<script text="type/javascript">
+						var pInt = parseInt('{{dblValue}}');
+
+					</script>
+				</td>
+				<td id="change" style="background-color:#BC6772;">{{dblChange}}</td>
+				<td id="time">{{intTime}}</td>
+				<td id="volume">{{intVolume}}</td>
+			</tr>
+		{{/objectStocks}}
+			<script text="type/javascript"></script>
+	</table>
 		<!--
 			given a javascript object like:
 				{

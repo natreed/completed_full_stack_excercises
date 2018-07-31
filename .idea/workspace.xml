@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b4b11f9-7fde-4c0b-ab58-23238aed4cd2" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/express/db/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/express/db/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/express/1-lorem.js" beforeDir="false" afterPath="$PROJECT_DIR$/express/1-lorem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/express/2-url.js" beforeDir="false" afterPath="$PROJECT_DIR$/express/2-url.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/express/3-http.js" beforeDir="false" afterPath="$PROJECT_DIR$/express/3-http.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/express/4-sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/express/4-sessions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/express/5-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/express/5-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/1-lorem.html" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/1-lorem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/2-suggest.html" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/2-suggest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/express/6-auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/express/6-auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mustache/3-logic.html" beforeDir="false" afterPath="$PROJECT_DIR$/mustache/3-logic.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,53 +19,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="6-dns.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node/6-dns.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1-lorem.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/express/1-lorem.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="2-url.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/express/2-url.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="6-auth.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/express/6-auth.js">
+      <file leaf-file-name="2-suggest.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ajax/2-suggest.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+              <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="6-auth.bash" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/express/6-auth.bash">
+      <file leaf-file-name="1-lorem.bash" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ajax/1-lorem.bash">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="4-sessions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/express/4-sessions.js">
+      <file leaf-file-name="1-lorem.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ajax/1-lorem.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="38" column="3" lean-forward="true" selection-start-line="17" selection-end-line="38" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="5-form.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/express/5-form.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+            <state relative-caret-position="106">
+              <caret line="12" column="56" lean-forward="true" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -90,7 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/html/2-lorem.bash" />
         <option value="$PROJECT_DIR$/html/2-lorem.html" />
         <option value="$PROJECT_DIR$/html/3-header.html" />
         <option value="$PROJECT_DIR$/html/4-lists.html" />
@@ -135,7 +106,13 @@
         <option value="$PROJECT_DIR$/node/3-http.js" />
         <option value="$PROJECT_DIR$/node/5-form.js" />
         <option value="$PROJECT_DIR$/node/4-cookies.js" />
+        <option value="$PROJECT_DIR$/express/db" />
+        <option value="$PROJECT_DIR$/express/db/index.js" />
+        <option value="$PROJECT_DIR$/express/db/users.js" />
         <option value="$PROJECT_DIR$/express/6-auth.js" />
+        <option value="$PROJECT_DIR$/mustache/3-logic.html" />
+        <option value="$PROJECT_DIR$/ajax/1-lorem.html" />
+        <option value="$PROJECT_DIR$/ajax/2-suggest.html" />
       </list>
     </option>
   </component>
@@ -419,6 +396,7 @@
       <path value="$PROJECT_DIR$/node_modules/parse-url/package.json" />
       <path value="$PROJECT_DIR$/node_modules/parseurl/package.json" />
       <path value="$PROJECT_DIR$/node_modules/passport-http/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/passport-local/package.json" />
       <path value="$PROJECT_DIR$/node_modules/passport-strategy/package.json" />
       <path value="$PROJECT_DIR$/node_modules/passport/package.json" />
       <path value="$PROJECT_DIR$/node_modules/path-is-absolute/package.json" />
@@ -537,9 +515,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="37" />
-    <option name="y" value="26" />
-    <option name="width" value="2585" />
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
@@ -557,12 +534,12 @@
             <path>
               <item name="full_stack_homework" type="b2602c69:ProjectViewProjectNode" />
               <item name="full_stack_homework" type="462c0819:PsiDirectoryNode" />
-              <item name="express" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="full_stack_homework" type="b2602c69:ProjectViewProjectNode" />
               <item name="full_stack_homework" type="462c0819:PsiDirectoryNode" />
-              <item name="node" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="full_stack_homework" type="b2602c69:ProjectViewProjectNode" />
@@ -597,10 +574,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.6-auth.js">
-    <configuration name="6-icon.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/full_stack_homework/bootstrap/6-icon.html" />
+  <component name="RunManager" selected="JavaScript Debug.1-lorem.html">
+    <configuration name="1-lorem.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/full_stack_homework/ajax/1-lorem.html" />
+    <configuration name="3-logic.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/full_stack_homework/mustache/3-logic.html" />
     <configuration name="Unnamed" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/full_stack_homework/javascript/6-table.html?_ijt=lo2ks59t222nj328mevmihakco" />
-    <configuration name="3-http.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="3-http.js" working-dir="$PROJECT_DIR$/node" />
     <configuration name="4-cookies.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="4-cookies.js" working-dir="$PROJECT_DIR$/node" />
     <configuration name="5-form.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="5-form.js" working-dir="$PROJECT_DIR$/node" />
     <configuration name="6-auth.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="6-auth.js" working-dir="$PROJECT_DIR$/express" />
@@ -614,19 +591,19 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Unnamed" />
-      <item itemvalue="JavaScript Debug.6-icon.html" />
-      <item itemvalue="Node.js.3-http.js" />
       <item itemvalue="Node.js.4-cookies.js" />
       <item itemvalue="Node.js.5-form.js" />
       <item itemvalue="Node.js.6-auth.js" />
+      <item itemvalue="JavaScript Debug.3-logic.html" />
+      <item itemvalue="JavaScript Debug.1-lorem.html" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.1-lorem.html" />
+        <item itemvalue="JavaScript Debug.3-logic.html" />
         <item itemvalue="Node.js.6-auth.js" />
         <item itemvalue="Node.js.4-cookies.js" />
         <item itemvalue="Node.js.5-form.js" />
-        <item itemvalue="Node.js.3-http.js" />
-        <item itemvalue="JavaScript Debug.6-icon.html" />
       </list>
     </recent_temporary>
   </component>
@@ -647,26 +624,29 @@
       <workItem from="1532029604230" duration="5252000" />
       <workItem from="1532298694414" duration="737000" />
       <workItem from="1532399468234" duration="2231000" />
+      <workItem from="1532402302189" duration="662000" />
+      <workItem from="1532409413142" duration="18241000" />
+      <workItem from="1533006567954" duration="4329000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72219000" />
+    <option name="totallyTimeSpent" value="95451000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="26" width="2585" height="1057" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17160687" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10373881" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.16166404" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50342286" side_tool="true" weight="0.38541666" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34166667" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7535545" weight="0.33333334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49815693" weight="0.38606966" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49657714" visible="true" weight="0.403125" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.838336" weight="0.45517242" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.838336" weight="0.453125" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -679,31 +659,31 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32916668" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Cargo" order="3" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.178515" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32859176" />
-      <window_info anchor="bottom" id="Python Console" order="9" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.838336" weight="0.25" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49815693" visible="true" weight="0.328125" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.16166404" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="5" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Python Console" order="9" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -721,7 +701,7 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="40" />
+      <option name="time" value="63" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JavascriptDebugType">
@@ -730,83 +710,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node/6-dns.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/3-http.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/2-url.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/5-form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="92" column="60" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/4-cookies.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="88" column="15" selection-start-line="88" selection-start-column="15" selection-end-line="88" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/3-http.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/2-url.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/5-form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="60" lean-forward="true" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/4-cookies.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="15" lean-forward="true" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascript/1-sort.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascript/4-object.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="38" column="26" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="38" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javascript/2-replace.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -884,13 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jquery/3-selectors.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="61" column="52" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javascript/6-table.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -919,24 +815,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jquery/2-textvalue.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jquery/7-draggable.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/6-dns.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1037,33 +919,126 @@
     <entry file="file://$PROJECT_DIR$/express/6-auth.bash">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/express/3-http.bash">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/express/1-lorem.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/express/5-form.js">
+    <entry file="file://$PROJECT_DIR$/node/6-dns.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        <state relative-caret-position="75">
+          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/express/3-http.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/express/2-url.js">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-319" />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/express/4-sessions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="38" column="3" lean-forward="true" selection-start-line="17" selection-end-line="38" selection-end-column="3" />
+        <state relative-caret-position="411">
+          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/5-form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/passport/lib/http/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/db/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mustache/1-lorem.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/3-http.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/express/6-auth.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mustache/3-logic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#td#2;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mustache/2-table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/db/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery/3-selectors.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="61" column="52" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery/2-textvalue.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/1-lorem.bash">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/1-lorem.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="12" column="56" lean-forward="true" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/2-suggest.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="46" />
         </state>
       </provider>
     </entry>
