@@ -16,6 +16,25 @@
 			// when somebody enters 'b' into the input textbox, the script should make a get request to: http://mercury.cs.pdx.edu/playground/ajax/suggest.json?strFile=b
 			// the data that is being received by this query is in the json format and might look like: { 'strFiles':['bash','bunzip2','busybox'] }
 			// this received data should subsequently set as the content of the output element as follows: 'bash\nbunzip2\nbusybox'
+            var request = new XMLHttpRequest();
+
+            request.onreadystatechange = function() {
+                if (request.readyState === 4) {
+                    if (request.status === 200) {
+                        $("#output").text(request.responseText);
+                    }
+                }
+            };
+
+            request.open(
+                'GET',
+                'http://mercury.cs.pdx.edu/playground/ajax/suggest.json?strFile=b',
+                true
+            );
+
+
+
+            request.send("Hello World");
 		</script>
 	</body>
 </html>

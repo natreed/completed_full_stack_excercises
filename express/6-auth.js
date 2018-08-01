@@ -2,27 +2,40 @@
 
 var express = require('express'); // do not change this line
 var passport = require('passport'); // do not change this line
-var strategy = require('passport-http');// do not change this line
-var LocalStrategy = require('passport-local').Strategy;
+var Strategy = require('passport-http').BasicStrategy;// do not change this line
+var db = require('./db');
 
-//https://github.com/passport/express-3.x-http-basic-example
 
-var server = express();
+/**
+ * Much of this is derived directly from jaredhanson's github: passport
+ * https://github.com/passport/express-3.x-http-basic-example/blob/master/
+ * @type {*[]}
+ */
+passport.use(new Strategy(
+    function(username, password, cb) {
+        console.log("inside strategy");
+        db.users.findByUsername(username, function(err, user) {
+            console.log("inside findByUsername");
+            if (err) { return cb(err); }
 
-passport.use(new LocalStrategy(
-    function(username, password, done) {
-        User.findOne({ username: username }, function(err, user) {
-            if (err) { return done(err); }
             if (!user) {
-                return done(null, false, { message: 'Incorrect username.' });
+                console.log("no username");
+                return cb(null, false);
             }
-            if (!user.validPassword(password)) {
-                return done(null, false, { message: 'Incorrect password.' });
+            if (user.password != password) {
+                console.log("password: " + user.password)
+                return cb(null, false);
             }
-            return done(null, user);
+            else {
+                console.log("password: " + user.password + " user: " + user.username);
+            }
+            return cb(null, user);
         });
-    }
-));
+    }));
+
+
+//Create new express server.
+var server = express();
 
 server.get('/hello', function(req, res) {
     res.status(200);
@@ -30,6 +43,15 @@ server.get('/hello', function(req, res) {
 
     res.send('accessible to everyone');
 });
+
+server.get('/*',
+    passport.authenticate('basic', { session: false}),
+    function(req, res) {
+        console.log("after auth");
+        res.status(200);
+        res.set({'Content-Type': 'text/plain'});
+        res.send('only accessible when logged in');
+    });
 
 server.listen(process.env.PORT || 8080);
 
