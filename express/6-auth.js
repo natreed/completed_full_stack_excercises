@@ -2,29 +2,39 @@
 
 var express = require('express'); // do not change this line
 var passport = require('passport'); // do not change this line
-var strategy = require('passport-http'); // do not change this line
-var session = require('express-session');
-express.use(session({secret: 'mySecretKey'}));
-express.use(passport.initialize());
-express.use(passport.session());
+var strategy = require('passport-http');// do not change this line
+var LocalStrategy = require('passport-local').Strategy;
+
+//https://github.com/passport/express-3.x-http-basic-example
 
 var server = express();
 
-server.post('/test',
-    passport.authenticate('local', { failureRedirect: '/login' }),
-    function(req, res) {
-        res.redirect('/');
-    });
-
-passport.use(new LocalStrategy({
-        usernameField: 'test',
-        passwordField: 'logmein',
-        session: false
-    },
+passport.use(new LocalStrategy(
     function(username, password, done) {
-        // ...
+        User.findOne({ username: username }, function(err, user) {
+            if (err) { return done(err); }
+            if (!user) {
+                return done(null, false, { message: 'Incorrect username.' });
+            }
+            if (!user.validPassword(password)) {
+                return done(null, false, { message: 'Incorrect password.' });
+            }
+            return done(null, user);
+        });
     }
 ));
+
+server.get('/hello', function(req, res) {
+    res.status(200);
+    res.set({'Content-Type': 'text/plain'});
+
+    res.send('accessible to everyone');
+});
+
+server.listen(process.env.PORT || 8080);
+
+
+
 
 // preface: use the passport middleware and only grant the user "test" with the password "logmein" access
 

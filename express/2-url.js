@@ -2,6 +2,61 @@
 
 var express = require('express'); // do not change this line
 
+var server = express();
+
+
+server.get('/', function(req, res) {
+    res.status(200);
+
+    res.set({
+        'Content-Type': 'text/plain'
+    });
+
+    res.send('you have accessed the root');
+});
+
+server.get('/test/*', function(req, res) {
+    res.status(200);
+
+    res.set({
+        'Content-Type': 'text/plain'
+    });
+    var word = req.url.replace('/test/', '');
+    res.send('you have accessed "' + word + '" within test');
+});
+
+server.get('/attributes*', function(req, res) {
+    res.status(200);
+
+    res.set({
+        'Content-Type': 'text/html'
+    });
+
+    var parse = url.parse(req.url);
+
+    var tableString = "<table border='1'>";
+
+    if (!(parse.query === null)) {
+        var queries = parse.query.split('&');
+
+        for (var i = 0; i < queries.length; i++) {
+            tableString += "<tr>";
+            var q = queries[i].split('=');
+            for (var j = 0; j < q.length; j++) {
+                tableString += "<td>" +q[j] + "</td>";
+            }
+            tableString += "</tr>";
+        }
+    }
+
+    tableString += '</table>';
+
+
+    res.send(tableString);
+});
+
+
+server.listen(process.env.PORT || 8080);
 // http://localhost:8080/ should return 'you have accessed the root' in plain text
 
 // http://localhost:8080/test/hello should return 'you have accessed "hello" within test' in plain text

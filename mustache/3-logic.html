@@ -1,16 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
 
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
-	</head>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
+</head>
 	<body>
-		<!--
+
+	<!--
+		  given a javascript object like:
+			 {
+				'objectStocks': [
+				   { 'strName': 'AMD.NAS', 'dblValue': 6.735, 'dblChange': -0.17, 'intTime': 1469635304434, 'intVolume': 19873260 },
+				   { 'strName': 'FME.FRA', 'dblValue': 81.41, 'dblChange': 0.25, 'intTime': 1469635495373, 'intVolume': 506131 },
+				   { 'strName': 'MSFT.NAS', 'dblValue': 56.34, 'dblChange': -0.43, 'intTime': 1469635411375, 'intVolume': 10467243 }
+				]
+			 } -->
+		<table border="1">
+			<tr>
+				<th>name</th>
+				<th>value</th>
+				<th>change</th>
+				<th>time</th>
+				<th>volume</th>
+			</tr>
+			{{#objectStocks}}
+				<tr>
+					<td>{{strName}}</td>
+					<td>{{dblValue}}</td>
+					<td>{{dblChange}}</td>
+					<td>{{intTime}}</td>
+					<td>{{intVolume}}</td>
+				</tr>
+			{{/objectStocks}}
+
+		</table >
+		<script text="type/javascript">
+
+			var functionSet = function(strSelector, strContent) {
+				// determine whether the content of jQuery(strSelector) should be set by using .val() or .text() and set it to strContent
+
+				if ($(strSelector).val() !== "") {
+					$(strSelector).val(strContent);
+				}
+				else {
+					$(strSelector).text(strContent);
+				}
+
+			};
+
+            var functionDate = function(longEpoch) {
+                // given longEpoch (an epoch time), return a string that represents the given date in the format 'YYYY.MM.DD HH:mm:ss'
+
+                return moment(longEpoch).format('YYYY.MM.DD [-] HH:mm:ss.SSS');
+
+            };
+
+            var fixDecimalOfStringForBMT = function (num, div, fix, str) {
+				var beforeDec = num / div;
+				var afterDec = num % div;
+				afterDec = afterDec.toFixed(fix);
+				var output = beforeDec.toString() + '.' + afterDec.toString();
+				var outputInt = parseFloat(output).toFixed(1);
+				return outputInt.toString() + ' ' + str;
+			};
+
+
+
+
+            $("tr").each(function() {
+                //Value
+                var ct = 1;
+                $("td", this).each(function(){
+                    if (ct === 1) {}
+                    //value
+                    else if (ct === 2) {
+                        var val = $(this).text();
+                        console.log(val);
+                        console.log(parseFloat(val).toFixed(2));
+                        var num = parseFloat(val).toFixed(2);
+                        $(this).text(num.toString());
+                    }
+                    //change
+                    else if (ct === 3) {
+					   var val = $(this).text();
+					   var num = parseFloat(val).toFixed(2);
+
+					   val = num.toString();
+					   $(this).text(val);
+					   if (num <= 0) {
+						   $(this).css({"background-color": "#BC6772"});
+					   }
+					   else {
+						   $(this).css({"background-color": "#ADC4A2"});
+					   }
+                    }
+                    //time
+					else if (ct === 4) {
+                        var val = $(this).text();
+                        var date = functionDate(parseInt(val));
+                        console.log(parseInt(val))
+                        $(this).text(date.toString());
+					}
+					//volume
+					else if (ct === 5) {
+                        var num = parseInt($(this).text());
+						if (num > 1000000000) {
+							var str = fixDecimalOfStringForBMT(num, 1000000000, 1, 'B');
+							$(this).text(str);
+						}
+						else if (num > 1000000) {
+							var str = fixDecimalOfStringForBMT(num, 1000000, 1, 'M');
+							$(this).text(str);
+						}
+						else if (num > 1000) {
+							var str = fixDecimalOfStringForBMT(num, 1000, 1, 'T');
+							$(this).text(str);
+						}
+					}
+
+					ct ++;
+
+                });
+
+
+            });
+        </script>
+    </body>
+</html>
+        <!--
+                // var num = parseInt($(this).text());
+                //     if (num > 1000000000) {
+                //         var str = fixDecimalOfStringForBMT(num, 1000000000, 1, 'B');
+                //         $(this).text(str);
+                //     }
+                //
+                //     else if (num > 1000000) {
+                //         var str = fixDecimalOfStringForBMT(num, 1000000, 1, 'M');
+                //         $(this).text(str);
+                //     }
+                //     else if (num > 1000) {
+                //         var str = fixDecimalOfStringForBMT(num, 1000, 1, 'T');
+                //         $(this).text(str);
+                //     }
+                //    var date = functionDate(parseFloat($(this).text()));
+                //    $(this).text(date);
+                //
+                //
+                //    var val = $(this).text();
+                //    var num = parseFloat(val).toFixed(2);
+                //
+                //    val = num.toString();
+                //    $(this).text(val);
+                //    if (num <= 0) {
+                //        $(this).css({"background-color": "#BC6772"});
+                //    }
+                //    else {
+                //        $(this).css({"background-color": "#ADC4A2"});
+                //    }
+
+
+                    // compare id to what you want
+
+
+
+
+
+
+
+
 			given a javascript object like:
 				{
 					'objectStocks': [
@@ -52,5 +214,3 @@
 					</tr>
 				</table>
 		-->
-	</body>
-</html>

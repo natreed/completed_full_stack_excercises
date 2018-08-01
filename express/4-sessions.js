@@ -5,6 +5,40 @@ var session = require('express-session'); // do not change this line
 
 // preface: use the express-session middleware with the memory storage which should make this task rather easy
 
+var server = express();
+
+server.use(session({
+    'store': new session.MemoryStore(),
+    'secret': 'a secret to sign the cookie',
+    'resave': true,
+    'saveUninitialized': false,
+    'history': undefined
+}));
+
+server.get('/*', function(req, res) {
+    res.status(200);
+    res.set({'Content-Type': 'text/plain'});
+
+    if (req.session.history === undefined) {
+        req.session.history = [];
+        req.session.history.push(req.url);
+        res.send('you must be new');
+    }
+    else {
+        req.session.history.push(req.url);
+        var history = req.session.history;
+        var s = 'your history:\n ';
+
+        s += ' ' + history[0];
+        for (var i = 1; i < history.length -1; i++) {
+            s += '  \n'+ history[i];
+        }
+        res.send(s);
+
+    }
+});
+
+server.listen(process.env.PORT || 8080);
 // http://localhost:8080/hello should return 'you must be new' in plain text and implicitly set an ident cookie by using the session middleware
 
 // http://localhost:8080/test should return 'your history:\n  /hello' in plain text
