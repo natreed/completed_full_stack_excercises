@@ -24,17 +24,19 @@
 		<script type="text/javascript">
 			// make jQuery('#draggable') draggable such that you can move it around, just like a window of an application on your computer
 
+
+
 			var beingDragged = false;
 			var relX;
-			
+
 			var relY;
 
-			jQuery('#draggable').on('mousedown', function(event) {
+			$('#draggable').on('mousedown', function(event) {
 					beingDragged = true;
 					relX = event.pageX - jQuery('#draggable').offset().left;
 					relY = event.pageY - jQuery('#draggable').offset().top;
 				});
-			jQuery(document).on('mousemove', function(event) {
+			$(document).on('mousemove', function(event) {
 					if(beingDragged === true) {
 						jQuery('#draggable').offset({
 								'left': event.pageX - relX,
@@ -42,7 +44,7 @@
 							});
 					}
 			 	});
-			jQuery(document).on('mouseup', function() {
+			$(document).on('mouseup', function() {
 				    beingDragged = false;
 				});
 		</script>
