@@ -68,76 +68,42 @@
 
 			// when receiving a 'drag' event from the server, use the contaianed strIdent and the intLeft as well as intTop position to update the associated element
 			// for example, you might receive the following in the 'drag' event when the last div has been dragged to the left: { 'strIdent':'fourth', 'intLeft':20, 'intTop':120 }
-			$("#first").on('click', function (event) {
-			    var obj = {};
-			    console.log(this);
-			    obj.strName = 'third';
-                obj.intLeft = event.pageX - $(this).offset().left;
-                obj.intTop = event.pageY - $(this).offset().top;
-                console.log(obj);
-                objectSocket.emit(dragEvent(obj));
+
+
+            var beingDragged = false;
+            var relX;
+            var relY;
+            var id;
+
+			$('.draggable').on('mousedown', function (e) {
+				beingDragged = true;
+				relX = e.pageX - $(this).offset().left;
+				relY = e.pageY - $(this).offset().top;
+				id = $(this).attr('id');
+			});''
+
+			$(document).on('mousemove', function (e) {
+				if (beingDragged === true) {
+					var left = e.pageX -relX;
+					var top = e.pageY - relY;
+
+					objectSocket.emit('drag', {strIdent:id,  intLeft:left, intTop:top})
+				}
 			});
 
-            $("#second").on('click', function (event) {
-                var obj = {};
-                console.log(this);
-                obj.strName = 'third';
-                obj.intLeft = event.pageX - $(this).offset().left;
-                obj.intTop = event.pageY - $(this).offset().top;
-                console.log(obj);
-                objectSocket.emit(dragEvent(obj));
-            });
+			$(document).on('mouseup', function (e) {
+				beingDragged = false;
+			});
 
-            $("#third").on('click', function (event) {
-                var obj = {};
-                console.log(this);
-                obj.strName = 'third';
-                obj.intLeft = event.pageX - $(this).offset().left;
-                obj.intTop = event.pageY - $(this).offset().top;
-                console.log(obj);
-                objectSocket.emit(dragEvent(obj));
-            });
+			objectSocket.on('drag', function(obj) {
+			    var div = obj.strIdent;
 
-            $("#fourth").on('click', function (event) {
-                var obj = {};
-                console.log(this);
-                obj.strName = 'third';
-                obj.intLeft = event.pageX - $(this).offset().left;
-                obj.intTop = event.pageY - $(this).offset().top;
-                console.log(obj);
-                objectSocket.emit(dragEvent(obj));
-            });
+			    $("#" + div).offset({
+                    'left' : obj.intLeft,
+                    'top': obj.intTop
+				})
 
-
-
-			var dragEvent = function (obj) {
-                obj.on('drag', function (objectData) {
-                    console.log(objectData);
-                    var beingDragged = false;
-                    var relX;
-                    var relY;
-
-                    $(obj).on('mousedown', function (event) {
-                        beingDragged = true;
-                        relX = event.pageX - obj.strLeft;
-                        relY = event.pageY - obj.strTop;
-                    });
-                    $(document).on('mousemove', function (event) {
-                        if (beingDragged === true) {
-                            jQuery(obj).offset({
-                                'left': event.pageX - relX,
-                                'top': event.pageY - relY
-                            });
-                        }
-                    });
-                    (document).on('mouseup', function () {
-                        beingDragged = false;
-                    });
-                });
-            }
-
-
-
+			})
 		</script>
 	</body>
 </html>

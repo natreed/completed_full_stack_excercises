@@ -21,7 +21,6 @@ io.on('connection', function(objectSocket) {
 
 	objectSocket.on('drag', function(objectData) {
 		console.log(objectData);
-
 		assert(objectData.strIdent !== undefined);
 		assert(objectData.intLeft !== undefined);
 		assert(objectData.intTop !== undefined);
