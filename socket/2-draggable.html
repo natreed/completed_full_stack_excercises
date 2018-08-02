@@ -61,22 +61,52 @@
 		<div id="fourth" class="draggable"></div>
 
 		<script type="text/javascript">
-			var obj = io.connect('http://localhost:8080/'); // do not change this line
+			var objectSocket = io.connect('http://localhost:8080/'); // do not change this line
 			console.log("Hellog");
 			// when dragging an element around, send a 'drag' event to the server containing the strIdent of the element and the new intLeft as well as the new intTop position
 			// for example, when dragging the first div to the right, the 'drag' event might contain: { 'strIdent':'first', 'intLeft':100, 'intTop':10 }
 
 			// when receiving a 'drag' event from the server, use the contaianed strIdent and the intLeft as well as intTop position to update the associated element
 			// for example, you might receive the following in the 'drag' event when the last div has been dragged to the left: { 'strIdent':'fourth', 'intLeft':20, 'intTop':120 }
-			$("#third").on('click', function (event) {
+			$("#first").on('click', function (event) {
 			    var obj = {};
 			    console.log(this);
 			    obj.strName = 'third';
                 obj.intLeft = event.pageX - $(this).offset().left;
                 obj.intTop = event.pageY - $(this).offset().top;
                 console.log(obj);
-                obj.emit(obj);
+                objectSocket.emit(dragEvent(obj));
 			});
+
+            $("#second").on('click', function (event) {
+                var obj = {};
+                console.log(this);
+                obj.strName = 'third';
+                obj.intLeft = event.pageX - $(this).offset().left;
+                obj.intTop = event.pageY - $(this).offset().top;
+                console.log(obj);
+                objectSocket.emit(dragEvent(obj));
+            });
+
+            $("#third").on('click', function (event) {
+                var obj = {};
+                console.log(this);
+                obj.strName = 'third';
+                obj.intLeft = event.pageX - $(this).offset().left;
+                obj.intTop = event.pageY - $(this).offset().top;
+                console.log(obj);
+                objectSocket.emit(dragEvent(obj));
+            });
+
+            $("#fourth").on('click', function (event) {
+                var obj = {};
+                console.log(this);
+                obj.strName = 'third';
+                obj.intLeft = event.pageX - $(this).offset().left;
+                obj.intTop = event.pageY - $(this).offset().top;
+                console.log(obj);
+                objectSocket.emit(dragEvent(obj));
+            });
 
 
 
@@ -84,23 +114,23 @@
                 obj.on('drag', function (objectData) {
                     console.log(objectData);
                     var beingDragged = false;
+                    var relX;
+                    var relY;
 
-                    jQuery('.draggable').on('mousedown', function (event) {
+                    $(obj).on('mousedown', function (event) {
                         beingDragged = true;
-                        var elemString = '#' + objectData.strIdent;
-                        var element = $(elemString);
-                        objectData.intLeft = event.pageX - element.offset().left;
-                        objectData.intTop = event.pageY - element.offset().top;
+                        relX = event.pageX - obj.strLeft;
+                        relY = event.pageY - obj.strTop;
                     });
-                    jQuery(document).on('mousemove', function (event) {
+                    $(document).on('mousemove', function (event) {
                         if (beingDragged === true) {
-                            jQuery('#draggable').offset({
+                            jQuery(obj).offset({
                                 'left': event.pageX - relX,
                                 'top': event.pageY - relY
                             });
                         }
                     });
-                    jQuery(document).on('mouseup', function () {
+                    (document).on('mouseup', function () {
                         beingDragged = false;
                     });
                 });
