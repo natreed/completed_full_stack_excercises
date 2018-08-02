@@ -14,9 +14,14 @@
 
 		<script type="text/javascript">
 			var objectSocket = io.connect('http://localhost:8080/'); // do not change this line
-
 			// when receiving a 'message' event from the server, append the intTimestamp and the strMessage to the output element
-			// for example, it should append the following when receiving { 'intTimestamp':123, 'strMessage':'test' } in the 'message' event: '123: test\n' 
+			// for example, it should append the following when receiving { 'intTimestamp':123, 'strMessage':'test' } in the 'message' event: '123: test\n'
+
+			objectSocket.on('message', function(objectData) {
+                console.log(objectData);
+                var text = objectData.intTimestamp + ": " + objectData.strMessage + "\n";
+                $('#output').append(text);
+            });
 		</script>
 	</body>
 </html>

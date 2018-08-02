@@ -13,7 +13,7 @@ var io = socket(server.listen(process.env.PORT || 8080));
 setInterval(function() {
 	io.emit('message', {
 		'intTimestamp': new Date().getTime(),
-		'strMessage': Math.random().toString(36).substr(2, 8)
+		'strMessage': Math.random().toString(36).substr(2, 8),
 	});
 }, 1000);
 
